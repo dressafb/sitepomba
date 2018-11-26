@@ -2,9 +2,9 @@
   "name": "site-dsw",
   "version": "1.0.0",
   "description": "Projeto",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "index.js",
+    "start": "app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andressa F Bueno",
