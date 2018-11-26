@@ -4,6 +4,7 @@
   "description": "Esse site contem todo o conteúdo da disciplina dsw.",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "André Luís Bordignon",
