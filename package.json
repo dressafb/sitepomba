@@ -1,13 +1,13 @@
 {
   "name": "site-dsw",
   "version": "1.0.0",
-  "description": "Esse site contem todo o conteúdo da disciplina dsw.",
-  "main": "index.js",
+  "description": "Projeto",
+  "main": "main.ejs",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "André Luís Bordignon",
+  "author": "Andressa F Bueno",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
