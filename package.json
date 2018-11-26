@@ -4,7 +4,7 @@
   "description": "Projeto",
   "main": "main.ejs",
   "scripts": {
-    "start": "node app.js",
+    "start": "main.ejs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andressa F Bueno",
