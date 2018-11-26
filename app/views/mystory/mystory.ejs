@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Story</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/mystory-style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+</head>
+<body>
+
+	<nav class="navbar">
+		<a href="/" class="logo">pigeon's travels</a>
+		<a href="/" class="half">home</a>
+		<a href="/aboutme">my story</a>
+		<a href="/contact">contact me</a>
+		<% if(session.type == 1) {%>
+		<a href="/dashboard">dashboard</a>
+		<% } %>
+		<% if(session.autorizado == true) {%>
+		    <a href="/logout" class="searchbar fa fa-sign-out"></a>
+		<% }else{ %>
+			<a href="/login" class="searchbar fa fa-sign-in"></a>
+		<% } %>
+	</nav>
+
+	<header class="section">
+		<div class="slide">
+			<img src="/images/header-main.jpg" id="header-image" alt="header">
+		</div>
+	</header>
+
+	<section class="main section">
+		<div class="wrapper">
+
+		<div class="wrapper-title">
+			<div class="articles-title">
+			<h1>my story</h1>
+			</div>
+		</div>
+
+		<div class="wrapper-articles">
+
+		<div class="box mystory">
+			<img class="img-right" src="/images/babypigeon.jpg" alt="baby pigeon">
+			<h1>The start of my journey</h1>
+			<p>Pruuu pruuu pruuu pru pruu, pruuuuuuuuu pruuuuuuuu pruuu. Pruuu pruuuuu pru pruuu pru pruuuuuu. Pruu pruuuu pru pruuuuuuu pruuuu pruuuu. Pruuu pruuuuuuu, pru pruuuuuuu pruuuu pruuuu. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu. Pru pruuuuuu pru pruu, pruuuu pruuuuuuu pru pruuuuuu pru. Pruuuuuuu pru pruu pru pruu pruuuuu pruuuuu pru pru pruu. Pruuuu pru pruuuuuu pruuu, pru pruuuu pruu.  </p>
+			<p>Pru pru pruuu, pruuuuuu pru pruu pru pru, pruuuuuu pruuuuuuu pruu. Pruuuuuu pruu pruu, pruuuuuu pru pru pruuuuuuu, pruuuu pruuuu pruuuu. Pruuuu pru pruuuuu pruuu. Pruuu pruuuuuuu pruuuuuu pruuu pru pruuuuuuu. Pru pruuuuu pruuu pruu pruuu pruuuu, pru pruuuuuuuuu pruu pruuuuuuu. Pruuuu pru pruuuuu pruuu. </p>
+			<p>Pruuu pruuu pruuuu pruu, pruu pruuuuuuu pruu. Pruuu pruuuu pruuu pruu, pru pruuuuuuuu pruuu pruuuuuu pruu. Pruuu pruuu pruuu pru pruu, pruuuuuuuuu pruuuuuuuu pruuu. Pruuu pruuuuu pru pruuu pru pruuuuuu. Pruu pruuuu pru pruuuuuuu pruuuu pruuuu. Pruuu pruuuuuuu, pru pruuuuuuu pruuuu pruuuu. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu. Pru pruuuuuu pru pruu, pruuuu pruuuuuuu pru pruuuuuu pru. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu.</p>
+			
+			<img class="img-left" src="/images/pomba_hardtimes.jpg" alt="pigeon hard times">
+			<h1>Hard Times</h1>
+			<p>Pruuu pruuu pruuuu pruu, pruu pruuuuuuu pruu. Pruuu pruuuu pruuu pruu, pru pruuuuuuuu pruuu pruuuuuu pruu. Pruuu pruuu pruuu pru pruu, pruuuuuuuuu pruuuuuuuu pruuu. Pruuu pruuuuu pru pruuu pru pruuuuuu. Pruu pruuuu pru pruuuuuuu pruuuu pruuuu. Pruuu pruuuuuuu, pru pruuuuuuu pruuuu pruuuu. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu. Pru pruuuuuu pru pruu, pruuuu pruuuuuuu pru pruuuuuu pru. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu. Pruuu pruuu pruuuu pruu, pruu pruuuuuuu pruu. Pruuu pruuuu pruuu pruu, pru pruuuuuuuu pruuu pruuuuuu pruu. Pruuu pruuu pruuu pru pruu, pruuuuuuuuu pruuuuuuuu pruuu. Pruuu pruuuuu pru pruuu pru pruuuuuu. Pruu pruuuu pru pruuuuuuu pruuuu pruuuu. Pruuu pruuuuuuu, pru pruuuuuuu pruuuu pruuuu. Pruuuu pru pruuuuu pruu.</p>
+			<p>Pruuu pruuu pruuuu pruu, pruu pruuuuuuu pruu. Pruuu pruuuu pruuu pruu, pru pruuuuuuuu pruuu pruuuuuu pruu. Pruuu pruuu pruuu pru pruu, pruuuuuuuuu pruuuuuuuu pruuu. Pruuu pruuuuu pru pruuu pru pruuuuuu. Pruu pruuuu pru pruuuuuuu pruuuu pruuuu. Pruuu pruuuuuuu, pru pruuuuuuu pruuuu pruuuu. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu. Pru pruuuuuu pru pruu, pruuuu pruuuuuuu pru pruuuuuu pru. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu. Pruuu pruuu pruuuu pruu, pruu pruuuuuuu pruu. Pruuu pruuuu pruuu pruu, pru pruuuuuuuu pruuu pruuuuuu pruu. </p>
+			<img class="img-right" src="/images/couple.jpg" alt="pigeon marriage">
+			<h1>Happy Ever After</h1>
+			<p>Pruuu pruuu pruuuu pruu, pruu pruuuuuuu pruu. Pruuu pruuuu pruuu pruu, pru pruuuuuuuu pruuu pruuuuuu pruu. Pruuu pruuu pruuu pru pruu, pruuuuuuuuu pruuuuuuuu pruuu. Pruuu pruuuuu pru pruuu pru pruuuuuu. Pruu pruuuu pru pruuuuuuu pruuuu pruuuu. Pruuu pruuuuuuu, pru pruuuuuuu pruuuu pruuuu. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu. Pru pruuuuuu pru pruu, pruuuu pruuuuuuu pru pruuuuuu pru. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu. Pruuu pruuu pruuuu pruu, pruu pruuuuuuu pruu. Pruuu pruuuu pruuu pruu, pru pruuuuuuuu pruuu pruuuuuu pruu.</p>
+		</div>
+
+		</div>
+	</div>
+	</section>
+
+	<footer>
+		<ul>
+			<li><a href="https://t.co/lDEg9ulzYb" class="fa fa-facebook"></a></li>
+			<li><a href="https://twitter.com/a_pomba" class="fa fa-twitter"></a></li>
+			<li><a href="https://t.co/e3vVw09aT0" class="fa fa-youtube"></a></li>
+			<li class="copyright">Ⓡ all rights reserved</li>
+		</ul>
+	</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.js"></script>
+<script src="/scripts/scrollify.js"></script>
+</body>
+</html>

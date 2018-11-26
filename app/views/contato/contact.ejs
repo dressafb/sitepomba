@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact me</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/contact-style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+</head>
+<body>
+
+	<nav class="navbar">
+		<a href="/" class="logo">pigeon's travels</a>
+		<a href="/" class="half">home</a>
+		<a href="/aboutme">my story</a>
+		<a href="/contact">contact me</a>
+		<% if(session.type == 1) {%>
+		<a href="/dashboard">dashboard</a>
+		<% } %>
+		<% if(session.autorizado == true) {%>
+		    <a href="/logout" class="searchbar fa fa-sign-out"></a>
+		<% }else{ %>
+			<a href="/login" class="searchbar fa fa-sign-in"></a>
+		<% } %>
+	</nav>
+
+	<header class="section">
+		<div class="slide">
+			<img src="/images/header-main.jpg" id="header-image" alt="header">
+		</div>
+	</header>
+
+	<section class="main section">
+		<div class="wrapper">
+
+			<div class="wrapper-title">
+				<div class="articles-title">
+					<h1>Contact me</h1>
+				</div>
+			</div>
+
+			<div class="wrapper-articles">
+
+				<div class="box box-main mystory">
+					<div class="box-item">
+						<i class="fa fa-facebook fa-lg"><a href="https://t.co/lDEg9ulzYb">facebook</a></i>
+						
+					</div>
+					<div class="box-item">
+						<i class="fa fa-twitter fa-lg"><a href="https://twitter.com/a_pomba">twitter</a></i>
+						
+					</div>
+					<div class="box-item">
+						<i class="fa fa-youtube fa-lg"><a href="https://t.co/e3vVw09aT0">youtube</a></i>
+						
+					</div>
+					<div class="box-item">
+						<i class="fa fa-instagram fa-lg"><a href="https://www.instagram.com/pigeon_stories/">instagram</a></i>
+						
+					</div>
+					<div class="box-item">
+						<i class="fa fa-phone-square fa-lg"><p>(88) 88888-8888</p></i>
+						
+					</div>
+					<div class="box-item">
+						<i class="fa fa-envelope-square fa-lg"><p>prupru@pigeon.com</p></i>
+						
+					</div>
+					<div class="box-map">
+						<i class="fa fa-map-marker fa-lg"><p>Address: Australia, 121-131 Oratava Ave West Pennant Hills</p></i>
+						<div id="map"></div>
+					</div>
+				</div>
+
+				<div class="box mystory" >
+					<h1 id="message">leave a massage</h1>
+					<form class="pure-form">
+						<div class="comment-form" >
+							<ul>
+								<li><input type="text" required placeholder="enter your name"></li>
+								<li><input placeholder="enter a valid email" required type="email"></li>
+								<li><textarea placeholder="enter comment text" required rows="3"></textarea></li>
+								<li><button type="submit" class="button-secondary pure-button">Send</button></li>
+							</ul>
+						</div>
+					</form>
+				</div>
+
+
+				<div class="box mystory">
+					<h1>My mix tape</h1>
+					<p>Pruuu pruuu pruuu pru pruu, pruuuuuuuuu pruuuuuuuu pruuu. Pruuu pruuuuu pru pruuu pru pruuuuuu. Pruu pruuuu pru pruuuuuuu pruuuu pruuuu. Pruuu pruuuuuuu, pru pruuuuuuu pruuuu pruuuu. Pruuuu pru pruuuuu pruu. Pruu pruuuuu pruuuu pruu, pru pruuuuu pruuu pruuuuuu pruu. Pru pruuuuuu pru pruu, pruuuu pruuuuuuu pru pruuuuuu pru. Pruuuuuuu pru pruu pru pruu pruuuuu pruuuuu pru pru pruu. Pruuuu pru pruuuuuu pruuu, pru pruuuu pruu. </p>
+					<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/400422621&color=%2326323c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<ul>
+			<li><a href="https://t.co/lDEg9ulzYb" class="fa fa-facebook"></a></li>
+			<li><a href="https://twitter.com/a_pomba" class="fa fa-twitter"></a></li>
+			<li><a href="https://t.co/e3vVw09aT0" class="fa fa-youtube"></a></li>
+			<li class="copyright">Ⓡ all rights reserved</li>
+		</ul>
+	</footer>
+
+	<script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwsnfm-yt6h8jZFBY3bS0MwStpk2-p-ps&callback=initMap">
+    </script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.js"></script>
+	<script src="/scripts/scrollify.js"></script>
+</body>
+</html>
+
+ 
+    

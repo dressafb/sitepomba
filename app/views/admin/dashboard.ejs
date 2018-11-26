@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact me</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/dashboard.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+
+	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+	<link href="/bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
+	<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<nav class="navbar">
+		<a href="/" class="searchbar fa fa-arrow-left">voltar</a>
+	</nav>
+
+	<div class="main section">
+		<div class="wrapper">
+			
+			<div class="wrapper-article3">
+				<div class="box article-header"><h1>DASHBOARD</h1></div>
+				<div class="box article-body">
+
+					<h1 id="message">Publish a new post</h1>
+					<form class="pure-form" action="/dashboard/post" method="post">
+						<div class="comment-form" >
+							<ul>
+								<li><input type="text" name="titulo"required placeholder="title"></li>
+								<li><input type="text" name="subtitulo"required placeholder="enter your name"></li>
+								<li><textarea name="postText" placeholder="text" required rows="5"></textarea></li>
+								<li><button type="submit" class="button-secondary pure-button">post</button></li>
+							</ul>
+						</div>
+					</form>
+
+
+					<table class="table table-striped">
+					  <thead>
+					    <tr>
+					      <th scope="col">#ID</th>
+					      <th scope="col">Título</th>
+					      <th scope="col"></th>
+					      <th scope="col"></th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	<% if (post) {%>
+						<% for(let i=0; i<post.length; i++) {%>
+					    <tr>
+					      <th scope="row"><%= post[i].idpost %></th>
+					      <td><%= post[i].titulo %></td>
+					      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastrar">edit</button></td>
+					      <td><form action="/dashboard/delete" method="post">
+						      	<input type="hidden" name="idpost" value="<%= post[i].idpost %>">
+						      	<input type="submit" value="x">
+					      	 </form>
+					  	 </td>
+					    </tr>
+					    <% } %>
+            			<% } %>
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title text-center">Cadastrar Evento</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" method="POST" action="proc_cad_evento.php">
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">Titulo</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="title" placeholder="Titulo do Evento">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-primary">Cadastrar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+ 
+    

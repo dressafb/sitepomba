@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Formulário de Inclusão de Estudantes</title>
+		</head>
+	<body>
+		<h1>Formulário para inclusão de estudantes</h1>
+
+		<section>
+			<% if(erros){%>
+				<ul>
+					<% for(let i=0; i < erros.length; i++) {%>
+						<li><%= erros[i].msg %></li>
+					<% } %>
+				</ul>
+			<% } %>
+		</section>
+
+		<form action="/nota/salvar" method="post">
+			<input type="text" name="nome" placeholder="Digite o nome do estudante" value="<%= notas.nome%>">
+			<input type="text" name="descricao" placeholder="Digite a descricao" value="<%= notas.descricao%>">
+			<input type="text" name="email" placeholder="Email do responsável" value="<%= notas.email%>">
+			<input type="text" name="horario" placeholder="Data" value="<%= notas.horario%>">
+			<input type="submit" value="enviar">
+		</form>
+
+		<h1>Disciplinas</h1>
+			<table>
+				<tr>
+					<td>Id</td>
+					<td>Nome</td>
+					<td>Descrição</td>
+					<td>Horário</td>
+				</tr>
+				<% for(let i=0; i<notas.length; i++) {%>
+				<tr>
+					<td><%= notas[i].id %></td>
+					<td><%= notas[i].nome %></td>
+					<td><%= notas[i].descricao %></td>
+					<td><%= notas[i].horario %></td>
+					<td><form action="/nota/deletar" method="post"><input type="hidden" name="id" value="<%= notas[i].id %>"><input type="submit" value="Deletar"></form></td>
+				</tr>
+				<% } %>
+			</table>
+
+	</body>
+</html>

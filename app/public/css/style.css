@@ -1,0 +1,557 @@
+/* Reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	-webkit-text-size-adjust: none;
+	background-color: #f4f4f4;
+}
+
+.main {
+	margin-top: 100px;
+}
+
+a:hover {
+	border-bottom-color: transparent;
+	color: #2ebaae !important;
+	transition: 0.3s;
+}
+
+/* Menu */
+.navbar{
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #ffffff;
+	border-bottom: 1px solid #e2e2e2; 
+}
+
+.logo {
+	border-right: 1px solid #e2e2e2 !important;
+}
+
+.navbar a:not(:first-child):not(:last-child){
+	float: left;
+	display: inline-grid;
+	text-align: center;
+	padding: 25px 20px;
+	text-decoration: none;
+	font-size: 17px;
+	color: #3c3b3b;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.7em;
+	font-weight: 400;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+}
+
+.logo{
+	float: left;
+	display: inline-grid;
+	text-align: center;
+	padding: 18px 20px;
+	text-decoration: none;
+	color: #3c3b3b;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-weight: 800;
+	letter-spacing: 0.25em;
+	line-height: 1.65;
+	text-transform: uppercase;
+}
+
+.searchbar{
+	float: right !important; 
+	display: inline-grid;
+	text-align: center;
+	padding: 23px 20px;
+	text-decoration: none;
+	font-size: 24px;
+	border-left:  1px solid #e2e2e2;
+	color:  #3c3b3b;
+}
+
+
+/*Grid Layout*/
+
+.wrapper-article {
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: 25% 25% 25% 25%;
+	background-color: #f4f4f4;
+	color: #3c3b3b;
+	padding-right: 120px;
+	padding-bottom: 60px;
+	padding-left: 120px;
+}
+.wrapper-comment{
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: 25% 25% 25% 25%;
+	background-color: #f4f4f4;
+	color: #3c3b3b;
+	padding-right: 120px;
+	padding-bottom: 60px;
+	padding-left: 120px;
+	grid-auto-rows: auto;
+}
+
+/*Box*/
+
+.box {
+	background-color: #ffffff;
+	color: #3c3b3b;
+	border-radius: 1px;
+	padding: 20px;
+	font-size: 150%;
+
+}
+
+.article-header {
+	padding: 80px;
+	grid-column: 1 / span 3;
+	grid-row: 1 ;
+	border: 1px solid #e2e2e2;
+	word-wrap: break-word;
+}
+
+.article-header h1 a{
+	color: #3c3b3b;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-weight: 800;
+	font-size: 38px;
+	letter-spacing: 0.25em;
+	line-height: 1.65;
+	text-transform: uppercase;
+	text-decoration: none;
+	word-wrap: break-word;
+}
+.article-header h2{
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.7em;
+	font-weight: 400;
+	letter-spacing: 0.25em;
+	line-height: 2.5;
+	text-transform: uppercase;
+	word-wrap: break-word;
+}
+
+.article-details {
+	padding: 80px 80px 30px 50px;
+	grid-column: 4 ;
+	border: 1px solid #e2e2e2;
+	border-left: 0px solid #e2e2e2;
+	grid-row: 1 ;
+}
+
+.article-details h1{
+	color: #3c3b3b;
+	text-align: right;
+	display: block;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: 800;
+	letter-spacing: 0.25em;
+	margin-bottom: 0.6em;
+	text-transform: uppercase;
+	line-height: 25px;
+}
+
+.article-details a{
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.5em;
+	font-weight: 400;
+	letter-spacing: 0.25em;
+	line-height: 2.5;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: rgba(160, 160, 160, 0.65);
+	transition: border-bottom-color 0.2s ease;
+	transition-property: border-bottom-color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
+	transition-delay: initial;
+	word-wrap: break-word;
+	margin-left: 45px;
+	line-height: 90px
+}
+.article-details img{
+	border-radius: 200px;
+	width:80px;
+	height:80px;
+	float: right;
+}
+
+.article-img {
+	grid-column: 1 / span 4 ;
+	grid-row: 2 ;
+	padding: 80px 80px 20px 80px;
+	border-left: 1px solid #e2e2e2;
+	border-right: 1px solid #e2e2e2;
+}
+.article-img img{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+
+.article-body{
+	grid-column: 1 / span 4 ;
+	grid-row: 3 ;
+	word-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+	padding: 20px 80px 30px 80px;
+	border-left: 1px solid #e2e2e2;
+	border-right: 1px solid #e2e2e2;
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: 400;
+	line-height: 1.75;
+	color: #646464;
+}
+
+.tag {
+	grid-column: 1 / span 4 ;
+	grid-row: 4 ;
+	border: 1px solid #e2e2e2;
+	border-top: 0px solid #e2e2e2;
+	padding: 20px 80px 40px 80px;
+}
+.tag ul li{
+	display: inline-grid;
+}
+
+.tag ul li a{
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: 400;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding-left: 5px; 
+}
+
+.tag i{
+	padding: 10px;
+	float: right;
+	font-size: 0.6em;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.tag i:hover{
+	color: #2ebaae ;
+	transition: 0.3s;
+}
+
+.comment-title{
+	grid-column: 1 / span 4;
+	border: 1px solid #e2e2e2;
+	border-bottom: 0px solid #e2e2e2;
+	color: #3c3b3b;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-weight: 800;
+	letter-spacing: 0.25em;
+	line-height: 1.65;
+	text-transform: uppercase;
+	padding: 80px 80px 20px 80px;
+}
+
+.comment-formulario{
+	grid-column: 1 / span 4;
+	border: 0px solid #e2e2e2;
+	border-right: 1px solid #e2e2e2;
+	border-left: 1px solid #e2e2e2;
+	padding: 20px 80px 20px 80px;
+	text-align: justify;
+	text-justify: inter-word;
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: 400;
+	line-height: 1.75;
+	color: #646464;
+}
+.comment-formulario ul li{
+	width: 100%;
+	display: block;
+}
+.comment-formulario ul li button{
+	width: 100%;
+	margin-top: 15px;
+	display: block;
+}
+
+.comments{
+	grid-column: 1 / span 4;
+	border: 0px solid #e2e2e2;
+	border-right: 1px solid #e2e2e2;
+	border-left: 1px solid #e2e2e2;
+	padding: 20px 80px 20px 80px;
+}
+
+.comment ul{
+	border: 0px solid #e2e2e2;
+	border-bottom: 1px solid #e2e2e2;
+	padding-bottom: 10px;
+	padding-top: 15px;
+
+}
+
+.comment ul li h1{
+	color: #3c3b3b;
+	display: inline-block;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.7em;
+	font-weight: 800;
+	letter-spacing: 0.25em;
+	margin-top: 0.5em;
+	text-transform: uppercase;
+}
+.comment ul li h2{
+	display: inline-block;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.5em;
+	font-weight: 400;
+	letter-spacing: 0.25em;
+	line-height: 2.5;
+	text-transform: uppercase;
+	word-wrap: break-word;
+	color: #3c3b3b;
+}
+.comment ul li p{
+	padding-top: 8px;
+	word-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: 400;
+	line-height: 1.75;
+	color: #646464;
+	padding-top: 12px;
+	padding-bottom: 25px;
+	padding-left: 10px;
+}
+
+.comment ul li{
+	padding-top: 8px;
+	word-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: 400;
+	line-height: 1.75;
+	color: #646464;
+	padding-top: 12px;
+	padding-bottom: 25px;
+	padding-left: 10px;
+}
+
+.comment{
+	animation: animationFrames ease 1s;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;
+	animation-fill-mode:forwards; 
+}
+
+@keyframes animationFrames{
+	0% {
+		opacity:0;
+		transform:  translate(0px,-1500px) ;
+	}
+	60% {
+		opacity:1;
+		transform:  translate(0px,30px)  ;
+	}
+	80% {
+		transform:  translate(0px,-10px)  ;
+	}
+	100% {
+		opacity:1;
+		transform:  translate(0px,0px)  ;
+	}
+}
+
+.comment-bottom{
+	grid-column: 1 / span 4;
+	border: 1px solid #e2e2e2;
+	border-top: 0px solid #e2e2e2;
+	padding: 20px 80px 80px 80px;
+}
+
+input{
+	appearance: none;
+	transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+	background-color: transparent;
+	border: 0;
+	box-shadow: inset 0 0 0 1px rgba(160, 160, 160, 0.3);
+	color: #3c3b3b !important;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: 800;
+	height: 10px;
+	letter-spacing: 0.25em;
+	padding: 10px;
+	text-align: left;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	margin-bottom: 15px;
+}
+input:hover{
+	box-shadow: inset 0 0 0 1px #2ebaae;
+	color: #2ebaae !important;
+	transition: 0.3s;
+}
+input:hover:active{
+	background-color: rgba(46, 186, 174, 0.05);
+}
+textarea{
+	appearance: none;
+	transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+	background-color: transparent;
+	border: 0;
+	box-shadow: inset 0 0 0 1px rgba(160, 160, 160, 0.3);
+	color: #3c3b3b !important;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: 800;
+	height: 70px;
+	letter-spacing: 0.25em;
+	padding: 10px;
+	text-align: left;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+textarea:hover{
+	box-shadow: inset 0 0 0 1px #2ebaae;
+	transition: 0.3s;
+	color: #2ebaae !important;
+}
+
+textarea:hover:active {
+	background-color: rgba(46, 186, 174, 0.05);
+}
+
+button{
+	appearance: none;
+	transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+	background-color: transparent;
+	border: 0;
+	box-shadow: inset 0 0 0 1px rgba(160, 160, 160, 0.3);
+	color: #3c3b3b !important;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: 800;
+	height: 4.8125em;
+	letter-spacing: 0.25em;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+button:hover{
+	box-shadow: inset 0 0 0 1px #2ebaae;
+	color: #2ebaae !important;
+	transition: 0.3s;
+}
+button:hover:active {
+	background-color: rgba(46, 186, 174, 0.05);
+}
+
+button:disabled{
+	appearance: none;
+	transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+	background-color: #c4c4c4;
+	border: 0;
+	box-shadow: inset 0 0 0 1px rgba(160, 160, 160, 0.3);
+	color: #3c3b3b !important;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: 800;
+	height: 4.8125em;
+	letter-spacing: 0.25em;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+/*Footer*/
+
+footer{
+	text-align: center;
+	margin-bottom: 60px;
+	background-color: #f4f4f4;
+	color: #aaaaaa;
+}
+ul li:not(:last-child){
+	display: inline-grid;
+}
+
+ul li a{
+	text-decoration:none; 
+	color: #aaaaaa;
+	letter-spacing: 0.5em;
+	padding-bottom: 10px;
+}
+.copyright{
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 0.5em;
+	font-weight: 500;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+}
+

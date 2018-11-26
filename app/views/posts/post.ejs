@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Puerto Varas</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+</head>
+<body>
+
+	<nav class="navbar">
+		<a href="/" class="logo">pigeon's travels</a>
+		<a href="/" class="half">home</a>
+		<a href="/aboutme" >my story</a>
+		<a href="/contact">contact me</a>
+		<% if(session.type == 1) {%>
+		<a href="/dashboard">dashboard</a>
+		<% } %>
+		<% if(session.autorizado == true) {%>
+		    <a href="/logout" class="searchbar fa fa-sign-out"></a>
+		<% }else{ %>
+			<a href="/login" class="searchbar fa fa-sign-in"></a>
+		<% } %>
+	</nav>
+
+	<section class="main">
+
+		<article class="wrapper-article">
+			<div class="box article-header"><h1><a href="/post?id=<%= rows[0].idpost %>"><%= rows[0].titulo %></a></h1><h2><%= rows[0].subtitulo %></h2></div>
+			<div class="box article-details"><h1><%= rows[0].dataFormat %></h1><a href="/aboutme"><%= rows[0].nome %></a><img src="/images/profile.jpg" alt="profile pic"></div>
+			<div class="box article-img"><img src="<%= rows[0].img %>" alt="chile"></div>
+			<div class="box article-body"><p><%= rows[0].postText %></p></div>
+			<div class="box tag"> 
+				<ul>
+					<li><a href="https://twitter.com/hashtag/viagem">#viagem</a></li>
+					<li><a href="https://twitter.com/hashtag/gratid%C3%A3o">#gratidão</a></li>
+					<li><a href="https://twitter.com/hashtag/pomba">#pomba</a></li>
+					<li><a href="https://twitter.com/hashtag/paz?lang=pt">#paz</a></li>
+				</ul>
+				<div onclick="incrementValue()"><i id="love" class="fa fa-heart"><%= rows[0].postLikes%></i></div>
+				<i id="comment-increment" class="fa fa-comments">0</i>
+			</div>
+
+		</article>
+
+		<section class="wrapper-comment">
+			<div class="box comment-title">comentários</div>
+			<div class="box comment-formulario">
+				<form class="pure-form" id="comment-form" action="/comment/save" method="post">
+					<div class="comment-form">
+						<ul>
+							<li style="display:none;"><input type="hidden" name="username" value="<%= session.username %>"></li>
+							<li style="display:none;"><input type="hidden" name="idpost" value="<%= rows[0].idpost %>"></li>
+							<li><textarea placeholder="enter comment text" required name="commentText" rows="3"></textarea></li>
+							<% if( typeof(session.autorizado) !== 'undefined') {%>
+								<li><button type="submit" class="button-secondary pure-button">send comment</button></li>
+							<%}else{%>
+								<li><button type="submit" disabled class="button-secondary pure-button">log-in to comment bellow</button></li>
+			  				<% } %>
+						</ul>
+					</div>
+				</form>
+			</div>
+
+			<div id="comments-list" class="box comments">
+				<% if (rows2) {%>
+				<% for(let i=0; i<rows2.length; i++) {%>
+					    <div class="comment">
+                        <ul>
+                        	<li><h1><%= rows2[i].nome %></h1></li>
+                        	<li><h2>(<%= rows2[i].username %>)</h2></li>
+                        	<li><h1>comentou:</h1></li>
+                        	<li type="hidden" style="display:none;"><%= rows2[i].idpost %></li>
+                        	<li type="hidden" style="display:none;"><%= rows2[i].idcomment %></li>
+                        	<% if(rows2[i].username == session.username) {%>
+                        	<li><form action="/comment/delete" method="post"><input type="hidden" name="idcomment" value="<%= rows2[i].idcomment %>"><input type="hidden" name="idpost" value="<%= rows2[i].idpost %>"><input class="button-secondary pure-button" type="submit" value="x"></form></p></li>
+                        	<li><button type="submit" class="button-secondary pure-button editbtn">Edit</button></li>
+                        	<% } %>
+                        	<li><%= rows2[i].commentText %></li>
+                        </ul>
+                    	</div>                
+            	<% } %>
+            	<% } %>
+            </div>
+			
+			<div class="box comment-bottom"></div>
+			
+		</section>
+	</section>
+
+	<footer>
+		<ul>
+			<li><a href="https://t.co/lDEg9ulzYb" class="fa fa-facebook"></a></li>
+			<li><a href="https://twitter.com/a_pomba" class="fa fa-twitter"></a></li>
+			<li><a href="https://t.co/e3vVw09aT0" class="fa fa-youtube"></a></li>
+			<li class="copyright">Ⓡ all rights reserved</li>
+		</ul>
+	</footer>
+
+<script type="text/javascript" src="https://js.pusher.com/3.2/pusher.min.js"></script>
+<script type="text/javascript" src="./app.js"></script>
+<script type="text/javascript" src="/scripts/increment.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.js"></script>
+<script type="text/javascript" src="/scripts/edit.js"></script>
+<script src="/scripts/scrollify.js"></script>
+</body>
+</html>

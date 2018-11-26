@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="/css/main-style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+</head>
+<body>
+
+	<nav class="navbar">
+		<a href="/" class="logo">pigeon's travels</a>
+		<a href="/" class="half">home</a>
+		<a href="/aboutme" >my story</a>
+		<a href="/contact">contact me</a>
+		<% if(session.type == 1) {%>
+		<a href="/dashboard">dashboard</a>
+		<% } %>
+		<% if(session.autorizado == true) {%>
+		    <a href="/logout" class="searchbar fa fa-sign-out"></a>
+		<% }else{ %>
+			<a href="/login" class="searchbar fa fa-sign-in"></a>
+		<% } %>
+	</nav>
+
+	<header class="section">
+		<div class="slide">
+			<img src="/images/header-main.jpg" id="header-image" alt="header">
+		</div>
+	</header>
+
+	<div class="main section">
+		<div class="wrapper">
+
+			<div class="wrapper-sidebar">
+				<div class="box-sidebar side-bar">
+
+					<div class="perfil-pic">
+						<div class="hexagon hexagon2">
+							<div class="hexagon-in1">
+								<div class="hexagon-in2"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="about-me">
+						<h1>about me</h1>
+						<p>Pruuu pruuu pruuu pru pruu, pruuuuuuuuu pruuuuuuuu pruuu. Pruuu pruuuuu pru pruuu pru pruuuuuu. Pruu pruuuu pru pruuuuuuu pruuuu pruuuu.</p>
+					</div>
+
+					<div class="social-profiles">
+						<h1>find me on</h1>
+						<ul>
+							<li><a href="https://t.co/lDEg9ulzYb" class="fa fa-facebook"></a></li>
+							<li><a href="https://twitter.com/a_pomba" class="fa fa-twitter"></a></li>
+							<li><a href="https://t.co/e3vVw09aT0" class="fa fa-youtube"></a></li>
+						</ul>
+					</div>
+
+					<div class="blogs">
+						<ul class="posts">
+							<li><h1>recommend blogs</h1></li>
+							<li>
+								<article>
+									<header>
+										<h3><a href="https://www.animalplanet.com/">Animal Planet</a></h3>
+										<section class="published">Pruuu pruuu pruuu pru pruu pruuuuu pruuuuuuuu pruuu</section>
+									</header>
+									<a href="#" class="image"><img src="/images/planet.png" alt="animal planet logo" /></a>
+								</article>
+							</li>
+							<li>
+								<article>
+									<header>
+										<h3><a href="http://bloganimal.com.br/">Blog Animal</a></h3>
+										<section class="published" >Pruuu pruuu pruuu pru pruu pruuuuu pruuuuuuuu pruuu</section>
+									</header>
+									<a href="#" class="image"><img src="/images/catdog.png" alt="catdog blog logo" /></a>
+								</article>
+							</li>
+							<li>
+								<article>
+									<header>
+										<h3><a href="http://www.lovemeow.com/">Blog love meow</a></h3>
+										<section class="published" >Pruuu pruuu pruuu pru pruu pruuuuu pruuuuuuuu pruuu</section>
+									</header>
+									<a href="#" class="image"><img src="/images/cat.png" alt="lovemeow blog logo" /></a>
+								</article>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="wrapper-articles">
+
+
+			<% for(let i=0; i<posts.length; i++) {%>
+			<div class="wrapper-article">
+				<div class="box article-header"><h1><a href="/post?id=<%= posts[i].idpost %>"><%= posts[i].titulo %></a></h1><h2><%= posts[i].subtitulo %></h2></div>
+				<div class="box article-details"><h1><%= posts[i].dataFormat %></h1><a href="/aboutme"><%= posts[i].nome %></a><img src="/images/profile.jpg" alt="profile pic"></div>
+				<div class="box article-img">
+				<% if (posts[i].img) {%>
+					<img src="<%= posts[i].img %>">
+				<%}%>
+				</div>
+				<div class="box article-body"><p><%= posts[i].postText %></p></div>
+				<div class="box button-article"> 
+					<a href="/post?id=<%= posts[i].idpost %>"><button class="button-secondary pure-button">continue<i class="fa fa-angle-right fa-lg"></i></button></a>
+				</div>
+			</div>
+			<% } %>
+			</div>
+		</div>
+	
+</div>
+
+<footer>
+	<ul>
+		<li><a href="https://t.co/lDEg9ulzYb" class="fa fa-facebook"></a></li>
+		<li><a href="https://twitter.com/a_pomba" class="fa fa-twitter"></a></li>
+		<li><a href="https://t.co/e3vVw09aT0" class="fa fa-youtube"></a></li>
+		<li class="copyright">Ⓡ all rights reserved</li>
+	</ul>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.js"></script>
+<script src="/scripts/scrollify.js"></script>
+</body>
+</html>

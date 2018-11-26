@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Disciplinas</title>
+</head>
+
+<body>
+
+	<h1>Disciplinas</h1>
+	<table>
+		<tr>
+			<td>Id</td>
+			<td>Nome</td>
+			<td>Descrição</td>
+			<td>Email</td>
+			<td>Horário</td>
+		</tr>
+		<% for(let i=0; i<notas.length; i++) {%>
+		<tr>
+			<td><%= notas[i].id %></td>
+			<td><%= notas[i].nome %></td>
+			<td><%= notas[i].descricao %></td>
+			<td><%= notas[i].email %></td>
+			<td><%= notas[i].horario %></td>
+		</tr>
+		<% } %>
+	</table>
+
+</body>
+
+</html>

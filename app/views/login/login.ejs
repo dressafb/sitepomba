@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="/css/login-style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+</head>
+<body>
+
+	<div class="main section">
+
+		<div class="wrapper">
+			
+			<div class="wrapper-article3">
+				<div class="box article-header"><h1>pigeon's travels</h1></div>
+				<div class="box article-body">
+
+					<form action="/login/enter" method="post">
+						<ul class="form-ul">
+						<li><input type="text" name="username" placeholder="username" maxlength="12"/></li>
+						<li><input type="password" name="senha" placeholder="password"></li>
+						<li class="inline"><input class="button-pure" type="submit" value="login">
+						</form>
+						<form method="get" action="/register">
+	    					<button class="button-pure" type="submit">New</button>
+						</form>
+						</li>
+						</ul>
+					<section>
+					<% if(erros.length > 0) { %> 
+							<% for(let i = 0; i < erros.length; i++){ %>
+							<ul>
+								<li><%= erros[i].msg %></li>
+							</ul>
+						<% } %> 
+					<% } %> 
+					</section>
+
+				</div>
+			</div>
+
+		</div>
+	
+</div>
+
+<footer>
+	<ul>
+		<li><a href="https://t.co/lDEg9ulzYb" class="fa fa-facebook"></a></li>
+		<li><a href="https://twitter.com/a_pomba" class="fa fa-twitter"></a></li>
+		<li><a href="https://t.co/e3vVw09aT0" class="fa fa-youtube"></a></li>
+		<li class="copyright">Ⓡ all rights reserved</li>
+	</ul>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.js"></script>
+</body>
+</html>
