@@ -1,9 +1,7 @@
 let app = require('./config/server.js');
 
-let port = 3000;
+let port = process.env.PORT;
 
-app.listen(process.env.PORT, function(){
-	var host = server.address().address
-  	var port = server.address().port
+app.listen(port, function(){
 	console.log('Servidor rodando com express na porta', port);
 });
